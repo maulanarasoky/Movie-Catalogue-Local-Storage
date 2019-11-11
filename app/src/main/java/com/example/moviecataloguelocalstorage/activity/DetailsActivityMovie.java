@@ -42,6 +42,10 @@ public class DetailsActivityMovie extends AppCompatActivity implements View.OnCl
     ImageView imageView;
     Button btnAddMov;
 
+    ListData movies;
+
+    int movFavId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +74,7 @@ public class DetailsActivityMovie extends AppCompatActivity implements View.OnCl
             movieFav = new ListDataFavoriteMovie();
         }
 
-        ListData movies = getIntent().getParcelableExtra(SEND_MOVIE);
+        movies = getIntent().getParcelableExtra(SEND_MOVIE);
 
         if (movies != null) {
             tvTitleMovFav.setText(movies.getTitle());
@@ -107,6 +111,7 @@ public class DetailsActivityMovie extends AppCompatActivity implements View.OnCl
 
             String url_poster = tvUrlMovFav.getText().toString().trim();
 
+            movieFav.setId(movies.getId());
             movieFav.setTitle(titles);
             movieFav.setDescription(overview);
             movieFav.setReleaseDate(release_date);

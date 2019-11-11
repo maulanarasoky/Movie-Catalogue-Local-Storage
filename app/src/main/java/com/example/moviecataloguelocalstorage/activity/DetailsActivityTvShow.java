@@ -15,7 +15,6 @@ import com.bumptech.glide.Glide;
 import com.example.moviecataloguelocalstorage.R;
 import com.example.moviecataloguelocalstorage.database.OperationHelper;
 import com.example.moviecataloguelocalstorage.model.ListData;
-import com.example.moviecataloguelocalstorage.model.ListDataFavoriteMovie;
 import com.example.moviecataloguelocalstorage.model.ListDataFavoriteTv;
 
 public class DetailsActivityTvShow extends AppCompatActivity implements View.OnClickListener {
@@ -42,6 +41,8 @@ public class DetailsActivityTvShow extends AppCompatActivity implements View.OnC
 
     public static final int REQUEST_ADD = 100;
     public static final int RESULT_ADD = 101;
+
+    ListData tvShow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,17 +72,17 @@ public class DetailsActivityTvShow extends AppCompatActivity implements View.OnC
             tvFav = new ListDataFavoriteTv();
         }
 
-        ListData movies = getIntent().getParcelableExtra(SEND_MOVIE);
+        tvShow = getIntent().getParcelableExtra(SEND_MOVIE);
 
-        if (movies != null) {
-            tvTitleMovFav.setText(movies.getTitle());
-            tvReleaseDateMovFav.setText(movies.getReleaseDate());
-            tvVoteAverageMovFav.setText(movies.getRatings());
-            tvOverviewMovFav.setText(movies.getDescription());
-            tvUrlMovFav.setText(movies.getPhoto());
+        if (tvShow != null) {
+            tvTitleMovFav.setText(tvShow.getTitle());
+            tvReleaseDateMovFav.setText(tvShow.getReleaseDate());
+            tvVoteAverageMovFav.setText(tvShow.getRatings());
+            tvOverviewMovFav.setText(tvShow.getDescription());
+            tvUrlMovFav.setText(tvShow.getPhoto());
 
             Glide.with(DetailsActivityTvShow.this)
-                    .load(movies.getPhoto())
+                    .load(tvShow.getPhoto())
                     .placeholder(R.color.colorAccent)
                     .override(50, 75)
                     .into(imageView);
@@ -109,6 +110,7 @@ public class DetailsActivityTvShow extends AppCompatActivity implements View.OnC
 
             String url_poster = tvUrlMovFav.getText().toString().trim();
 
+            tvFav.setId(tvShow.getId());
             tvFav.setTitle(titles);
             tvFav.setDescription(overview);
             tvFav.setReleaseDate(release_date);

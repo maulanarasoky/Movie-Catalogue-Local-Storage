@@ -21,7 +21,7 @@
     <string name="vote_average">Vote Average</string>
     <string name="add_to_favorite">Add to Favorite</string>
     <string name="success_add">Success add to favorite</string>
-    <string name="failed_add">Failed add to favorite</string>
+    <string name="failed_add">The movie or tv show was added before</string>
     <string name="remove_favorite">Remove Favorite</string>
     <string name="notify_ques_delete">Are you sure to delete this favorite?</string>
     <string name="notify_failed_delete_data">Failed delete data</string>

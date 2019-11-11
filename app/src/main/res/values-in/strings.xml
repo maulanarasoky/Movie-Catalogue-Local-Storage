@@ -21,7 +21,7 @@
     <string name="vote_average">Voting</string>
     <string name="add_to_favorite">Tambah Favorit</string>
     <string name="success_add">Berhasil menambahkan favorit</string>
-    <string name="failed_add">Gagal menambahkan favorit</string>
+    <string name="failed_add">Film atau acara tv sudah ditambahkan sebelumnya</string>
     <string name="remove_favorite">Hapus Favorit</string>
     <string name="notify_ques_delete">Apakah anda yakin ingin menghapus nya ?</string>
     <string name="notify_failed_delete_data">Gagal menghapus data</string>

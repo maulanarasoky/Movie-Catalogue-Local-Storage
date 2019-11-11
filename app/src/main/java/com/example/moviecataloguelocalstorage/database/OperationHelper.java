@@ -109,6 +109,7 @@ public class OperationHelper {
 
     public long insertMovie(ListDataFavoriteMovie listDataFavoriteMovie) {
         ContentValues initialValues = new ContentValues();
+        initialValues.put(_ID, listDataFavoriteMovie.getId());
         initialValues.put(DatabaseContract.MovieColumns.TITLE, listDataFavoriteMovie.getTitle());
         initialValues.put(DatabaseContract.MovieColumns.DESCRIPTION, listDataFavoriteMovie.getDescription());
         initialValues.put(DatabaseContract.MovieColumns.VOTES, listDataFavoriteMovie.getRatings());
@@ -119,6 +120,7 @@ public class OperationHelper {
 
     public long insertTv(ListDataFavoriteTv listDataFavoriteTv) {
         ContentValues initialValues = new ContentValues();
+        initialValues.put(_ID, listDataFavoriteTv.getId());
         initialValues.put(DatabaseContract.TvColumns.TITLE, listDataFavoriteTv.getTitle());
         initialValues.put(DatabaseContract.TvColumns.DESCRIPTION, listDataFavoriteTv.getDescription());
         initialValues.put(DatabaseContract.TvColumns.VOTES, listDataFavoriteTv.getRatings());
